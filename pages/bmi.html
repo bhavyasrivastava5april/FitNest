@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator | FitNest</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<section class="container py-5">
+
+    <div class="row align-items-center g-5">
+
+        <!-- Information -->
+        <div class="col-12 col-lg-6">
+            <h1>Know Your BMI</h1>
+
+            <p>
+                Body Mass Index (BMI) is a simple measure that uses your
+                height and weight to estimate whether your weight falls
+                within a healthy range.
+            </p>
+        </div>
+
+        <!-- Calculator -->
+        <div class="col-12 col-lg-6">
+
+            <div class="card shadow p-4">
+
+                <h2 class="mb-4">BMI Calculator</h2>
+
+                <div class="mb-3">
+                    <label for="height" class="form-label">
+                        Height (cm)
+                    </label>
+
+                    <input type="number"
+                           class="form-control"
+                           id="height"
+                           placeholder="Enter your height">
+                </div>
+
+                <div class="mb-3">
+                    <label for="weight" class="form-label">
+                        Weight (kg)
+                    </label>
+
+                    <input type="number"
+                           class="form-control"
+                           id="weight"
+                           placeholder="Enter your weight">
+                </div>
+
+                <button class="btn btn-success w-100" onclick="calculateBMI()">
+    Calculate BMI
+</button>
+
+<div id="result" class="mt-4"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/bmi.js"></script>
+
+</body>
+</html>
