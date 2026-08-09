@@ -60,23 +60,40 @@ function calculateBMI() {
     }
 
     const bmi = weight / (heightInMeters * heightInMeters);
-
     let category;
+let alertClass;
+let message;
 
-    if (bmi < 18.5) {
-        category = "Underweight";
-    } else if (bmi < 25) {
-        category = "Healthy Weight";
-    } else if (bmi < 30) {
-        category = "Overweight";
-    } else {
-        category = "Obesity";
-    }
+if (bmi < 18.5) {
+    category = "Underweight";
+    alertClass = "alert-warning";
+    message = "Consider maintaining a balanced and nutritious diet.";
+}
+else if (bmi < 25) {
+    category = "Healthy Weight";
+    alertClass = "alert-success";
+    message = "Your BMI is within the healthy range.";
+}
+else if (bmi < 30) {
+    category = "Overweight";
+    alertClass = "alert-warning";
+    message = "Consider maintaining a balanced diet and regular physical activity.";
+}
+else {
+    category = "Obesity";
+    alertClass = "alert-danger";
+    message = "Consider speaking with a healthcare professional about your health goals.";
+}
 
-    document.getElementById("result").innerHTML =
-        `<div class="alert alert-success">
-            Your BMI is <strong>${bmi.toFixed(1)}</strong> — ${category}
-        </div>`;
+document.getElementById("result").innerHTML =
+    `<div class="alert ${alertClass}">
+        <h5 class="alert-heading">Your BMI: ${bmi.toFixed(1)}</h5>
+        <strong>${category}</strong>
+        <p class="mb-0">${message}</p>
+    </div>`;
+    
+
+    
 }
 
     
