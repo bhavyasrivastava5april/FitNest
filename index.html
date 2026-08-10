@@ -12,28 +12,90 @@
 <body>
 
     <!-- Navbar -->
-   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle"
-       href="#"
-       role="button"
-       data-bs-toggle="dropdown">
-        Calculators
-    </a>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
 
-    <ul class="dropdown-menu">
-        <li>
-            <a class="dropdown-item" href="pages/bmi.html">
-                BMI Calculator
-            </a>
-        </li>
+    <div class="container">
 
-        <li>
-            <a class="dropdown-item" href="pages/water.html">
-                Water Intake
+        <a class="navbar-brand logo fw-bold" href="index.html">
+            🌿 FitNest
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto me-3">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <!-- Calculators -->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+
+                        Calculators
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item" href="pages/bmi.html">
+                                BMI Calculator
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="pages/water.html">
+                                Water Intake
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <!-- Features -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">
+                        Features
+                    </a>
+                </li>
+
+            </ul>
+
+            <a href="pages/bmi.html" class="btn btn-success">
+                Get Started
             </a>
-        </li>
-    </ul>
-</li>
+
+        </div>
+
+    </div>
+
+</nav>
 
     <!-- Hero Section -->
     
