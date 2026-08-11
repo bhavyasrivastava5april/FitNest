@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nutrition Guide | FitNest</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
+
+        <div class="container">
+
+            <a class="navbar-brand logo fw-bold" href="../index.html">
+                🌿 FitNest
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto me-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           role="button"
+                           data-bs-toggle="dropdown">
+
+                            Calculators
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="bmi.html">
+                                    BMI Calculator
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="water.html">
+                                    Water Intake
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/workout.html">
+                            Workouts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nutrition.html">
+                            Nutrition
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Nutrition Section -->
+    <section class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-8">
+
+                <div class="text-center mb-5">
+
+                    <h1>Nutrition Guide</h1>
+
+                    <p class="text-muted">
+                        Choose your goal and preferences to get general
+                        food suggestions for your meal.
+                    </p>
+
+                </div>
+
+
+                <!-- Nutrition Form -->
+                <div class="card shadow p-4">
+
+                    <h2 class="mb-4 text-center">
+                        Personalize Your Nutrition
+                    </h2>
+
+
+                    <!-- Goal -->
+                    <div class="mb-4">
+
+                        <label for="goal" class="form-label">
+                            What is your goal?
+                        </label>
+
+                        <select class="form-select" id="goal">
+
+                            <option value="weightLoss">
+                                Weight Loss
+                            </option>
+
+                            <option value="weightGain">
+                                Weight Gain
+                            </option>
+
+                            <option value="muscleGain">
+                                Muscle Gain
+                            </option>
+
+                            <option value="generalFitness">
+                                General Fitness
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Diet Preference -->
+                    <div class="mb-4">
+
+                        <label for="diet" class="form-label">
+                            Diet Preference
+                        </label>
+
+                        <select class="form-select" id="diet">
+
+                            <option value="vegetarian">
+                                Vegetarian
+                            </option>
+
+                            <option value="nonVegetarian">
+                                Non-Vegetarian
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Meal -->
+                    <div class="mb-4">
+
+                        <label for="meal" class="form-label">
+                            Meal
+                        </label>
+
+                        <select class="form-select" id="meal">
+
+                            <option value="breakfast">
+                                Breakfast
+                            </option>
+
+                            <option value="lunch">
+                                Lunch
+                            </option>
+
+                            <option value="dinner">
+                                Dinner
+                            </option>
+
+                            <option value="snacks">
+                                Snacks
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Button -->
+                    <button
+                        class="btn btn-success w-100"
+                        onclick="getNutrition()">
+
+                        Get Food Suggestions
+
+                    </button>
+
+
+                    <!-- Recommendation -->
+                    <div id="nutritionResult" class="mt-4"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Nutrition JavaScript -->
+    <script src="../js/nutrition.js"></script>
+
+</body>
+
+</html>
