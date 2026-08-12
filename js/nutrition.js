@@ -6,6 +6,7 @@ function getNutrition() {
 
     let suggestions = [];
 
+    // Food suggestions
     if (meal === "breakfast") {
 
         if (goal === "weightLoss") {
@@ -117,26 +118,96 @@ function getNutrition() {
         }
     }
 
+
+    // Convert internal goal value into a user-friendly name
+    let goalName;
+
+    if (goal === "weightLoss") {
+        goalName = "Weight Loss";
+    }
+    else if (goal === "weightGain") {
+        goalName = "Weight Gain";
+    }
+    else if (goal === "muscleGain") {
+        goalName = "Muscle Gain";
+    }
+    else {
+        goalName = "General Fitness";
+    }
+
+
+    // Goal explanation
+    let goalMessage;
+
+    if (goal === "weightLoss") {
+        goalMessage = "Choose balanced meals with vegetables, whole grains and protein-rich foods.";
+    }
+    else if (goal === "weightGain") {
+        goalMessage = "Focus on nutrient-dense foods that provide enough energy and protein.";
+    }
+    else if (goal === "muscleGain") {
+        goalMessage = "Include adequate protein and balanced meals to support muscle development.";
+    }
+    else {
+        goalMessage = "Aim for a balanced meal containing a variety of nutritious foods.";
+    }
+
+
+    // Convert meal value into a user-friendly name
+    let mealName;
+
+    if (meal === "breakfast") {
+        mealName = "Breakfast";
+    }
+    else if (meal === "lunch") {
+        mealName = "Lunch";
+    }
+    else if (meal === "dinner") {
+        mealName = "Dinner";
+    }
+    else {
+        mealName = "Snacks";
+    }
+
+
+    // Create food list
     let suggestionList = "";
 
     suggestions.forEach(function(food) {
         suggestionList += `<li class="mb-2">${food}</li>`;
     });
 
+
+    // Display result
     document.getElementById("nutritionResult").innerHTML =
         `<div class="card border-success shadow-sm p-3">
 
-            <h4 class="text-success">
+            <h4 class="text-success mb-3">
                 Food Suggestions
             </h4>
 
+            <p class="mb-2">
+                <strong>Goal:</strong> ${goalName}
+            </p>
+
             <p>
-                <strong>Meal:</strong> ${meal}
+                <strong>Meal:</strong> ${mealName}
+            </p>
+
+            <hr>
+
+            <p class="fw-bold mb-2">
+                Recommended Foods:
             </p>
 
             <ul class="mb-3">
                 ${suggestionList}
             </ul>
+
+            <div class="alert alert-light mb-3">
+                <strong>Why this helps:</strong><br>
+                ${goalMessage}
+            </div>
 
             <p class="small text-muted mb-0">
                 These are general food suggestions and are not
