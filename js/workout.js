@@ -146,6 +146,18 @@ function getWorkout() {
         }
     }
 
+    // Adjust workout based on selected duration
+if (duration === "15") {
+    exercises = exercises.slice(0, 3);
+}
+else if (duration === "30") {
+    exercises = exercises.slice(0, 4);
+}
+else if (duration === "45") {
+    exercises = exercises.slice(0, 5);
+}
+// For 60 minutes, keep the complete exercise list
+
     let exerciseList = "";
 
     exercises.forEach(function(exercise) {
