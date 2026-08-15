@@ -115,7 +115,7 @@ Bootstrap's responsive grid and utility classes are used along with custom CSS t
 
 ## 📁 Project Structure
 
-
+``` text
 FitNest/
 │
 ├── index.html
