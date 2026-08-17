@@ -7,6 +7,9 @@ function getWorkout() {
     let workoutTitle;
     let exercises = [];
 
+
+    // Workout based on goal and fitness level
+
     if (goal === "weightLoss") {
 
         workoutTitle = "Weight Loss Workout";
@@ -20,6 +23,7 @@ function getWorkout() {
                 "Light stretching — 5 minutes"
             ];
         }
+
         else if (level === "intermediate") {
             exercises = [
                 "Brisk walking — 5 minutes",
@@ -29,6 +33,7 @@ function getWorkout() {
                 "Mountain climbers — 20 reps"
             ];
         }
+
         else {
             exercises = [
                 "Jogging — 5 minutes",
@@ -41,6 +46,7 @@ function getWorkout() {
         }
 
     }
+
 
     else if (goal === "weightGain") {
 
@@ -55,6 +61,7 @@ function getWorkout() {
                 "Light stretching — 5 minutes"
             ];
         }
+
         else if (level === "intermediate") {
             exercises = [
                 "Squats — 12 reps",
@@ -64,6 +71,7 @@ function getWorkout() {
                 "Bodyweight rows — 10 reps"
             ];
         }
+
         else {
             exercises = [
                 "Squats — 12 reps",
@@ -76,6 +84,7 @@ function getWorkout() {
         }
 
     }
+
 
     else if (goal === "muscleGain") {
 
@@ -90,6 +99,7 @@ function getWorkout() {
                 "Plank — 20 seconds"
             ];
         }
+
         else if (level === "intermediate") {
             exercises = [
                 "Squats — 12 reps",
@@ -99,6 +109,7 @@ function getWorkout() {
                 "Plank — 30 seconds"
             ];
         }
+
         else {
             exercises = [
                 "Squats — 15 reps",
@@ -111,6 +122,7 @@ function getWorkout() {
         }
 
     }
+
 
     else {
 
@@ -125,6 +137,7 @@ function getWorkout() {
                 "Stretching — 5 minutes"
             ];
         }
+
         else if (level === "intermediate") {
             exercises = [
                 "Jogging — 5 minutes",
@@ -134,6 +147,7 @@ function getWorkout() {
                 "Core exercises — 30 seconds"
             ];
         }
+
         else {
             exercises = [
                 "Running — 5 minutes",
@@ -146,30 +160,97 @@ function getWorkout() {
         }
     }
 
-    // Adjust workout based on selected duration
-if (duration === "15") {
-    exercises = exercises.slice(0, 3);
-}
-else if (duration === "30") {
-    exercises = exercises.slice(0, 4);
-}
-else if (duration === "45") {
-    exercises = exercises.slice(0, 5);
-}
-// For 60 minutes, keep the complete exercise list
+
+    // Adjust workout according to duration
+
+    if (duration === "15") {
+
+        exercises = exercises.slice(0, 3);
+
+    }
+
+    else if (duration === "30") {
+
+        exercises = exercises.slice(0, 4);
+
+    }
+
+    else if (duration === "45") {
+
+        exercises = exercises.slice(0, 5);
+
+    }
+
+    // 60 minutes keeps the complete workout
+
+
+    // Convert goal into a user-friendly name
+
+    let goalName;
+
+    if (goal === "weightLoss") {
+        goalName = "Weight Loss";
+    }
+
+    else if (goal === "weightGain") {
+        goalName = "Weight Gain";
+    }
+
+    else if (goal === "muscleGain") {
+        goalName = "Muscle Gain";
+    }
+
+    else {
+        goalName = "General Fitness";
+    }
+
+
+    // Convert level into a user-friendly name
+
+    let levelName;
+
+    if (level === "beginner") {
+        levelName = "Beginner";
+    }
+
+    else if (level === "intermediate") {
+        levelName = "Intermediate";
+    }
+
+    else {
+        levelName = "Advanced";
+    }
+
+
+    // Create exercise list
 
     let exerciseList = "";
 
     exercises.forEach(function(exercise) {
-        exerciseList += `<li class="mb-2">${exercise}</li>`;
+
+        exerciseList +=
+            `<li class="mb-2">${exercise}</li>`;
+
     });
 
+
+    // Display result
+
     document.getElementById("workoutResult").innerHTML =
+
         `<div class="card border-success shadow-sm p-3">
 
-            <h4 class="alert-heading">
+            <h4 class="text-success mb-3">
                 ${workoutTitle}
             </h4>
+
+            <p class="mb-1">
+                <strong>Goal:</strong> ${goalName}
+            </p>
+
+            <p class="mb-1">
+                <strong>Fitness Level:</strong> ${levelName}
+            </p>
 
             <p>
                 <strong>Duration:</strong> ${duration} minutes
@@ -186,8 +267,9 @@ else if (duration === "45") {
             </ul>
 
             <p class="mb-0 small">
-                <strong>Note:</strong> Start at a comfortable intensity
-                and stop if you experience pain, dizziness, or unusual discomfort.
+                <strong>Note:</strong>
+                Start at a comfortable intensity and stop if you
+                experience pain, dizziness, or unusual discomfort.
             </p>
 
         </div>`;
