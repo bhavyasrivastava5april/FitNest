@@ -4,9 +4,11 @@ function showOtherCondition() {
     const otherCondition = document.getElementById("otherCondition");
 
     if (condition === "other") {
+
         otherCondition.classList.remove("d-none");
-    } 
-    else {
+
+    } else {
+
         otherCondition.classList.add("d-none");
         document.getElementById("otherText").value = "";
     }
@@ -28,10 +30,10 @@ function getHealthRecommendation() {
         conditionName = "Diabetes";
 
         recommendations = [
-            "Include regular physical activity such as walking or other moderate exercise.",
-            "Choose balanced meals containing vegetables, whole grains and appropriate protein sources.",
-            "Stay hydrated throughout the day.",
-            "Follow the blood glucose monitoring and medication plan recommended by your healthcare professional."
+            "Regular physical activity can support blood glucose management and overall cardiovascular health.",
+            "Choose balanced meals with vegetables, whole grains and appropriate protein sources.",
+            "Stay hydrated and maintain regular activity according to your abilities.",
+            "If you have diabetes, follow your healthcare professional's guidance for blood glucose monitoring, medication and exercise."
         ];
     }
 
@@ -42,10 +44,10 @@ function getHealthRecommendation() {
         conditionName = "High Blood Pressure";
 
         recommendations = [
-            "Regular moderate activities such as walking or cycling can support cardiovascular health.",
-            "Include fruits, vegetables and other nutrient-rich foods in your diet.",
-            "Be mindful of excessive sodium intake.",
-            "Follow your healthcare professional's advice regarding exercise intensity and blood pressure management."
+            "Regular physical activity can support cardiovascular health and help manage blood pressure.",
+            "Choose a heart-healthy eating pattern that includes vegetables, fruits, whole grains and other nutrient-rich foods.",
+            "Be mindful of excessive sodium intake, particularly from highly processed and packaged foods.",
+            "If you have high blood pressure, discuss appropriate exercise intensity and treatment with your healthcare professional."
         ];
     }
 
@@ -56,10 +58,10 @@ function getHealthRecommendation() {
         conditionName = "PCOS";
 
         recommendations = [
-            "Regular physical activity can support overall fitness and metabolic health.",
-            "Include a combination of aerobic activity and strength exercises.",
-            "Choose balanced meals containing vegetables, whole grains and protein-rich foods.",
-            "Maintain consistent sleep and stress-management habits."
+            "Regular physical activity can support overall health and metabolic wellbeing.",
+            "Choose sustainable physical activities that fit your preferences, abilities and goals.",
+            "Follow a balanced eating pattern rather than relying on unnecessarily restrictive diets.",
+            "Consistent sleep and healthy lifestyle habits can support overall wellbeing."
         ];
     }
 
@@ -70,10 +72,10 @@ function getHealthRecommendation() {
         conditionName = "Joint Problems";
 
         recommendations = [
-            "Consider low-impact activities such as walking, swimming or gentle cycling.",
-            "Warm up before exercising and increase activity gradually.",
-            "Avoid movements that cause or worsen joint pain.",
-            "Seek professional guidance if joint pain is persistent or severe."
+            "Consider low-impact activities such as walking, swimming or gentle cycling if they are comfortable for you.",
+            "Start gradually and choose activities that match your abilities.",
+            "Avoid movements that cause or worsen pain.",
+            "If joint pain is persistent, severe or limiting your normal activities, seek professional guidance."
         ];
     }
 
@@ -84,38 +86,71 @@ function getHealthRecommendation() {
         conditionName = "General Wellness";
 
         recommendations = [
-            "Stay physically active regularly.",
-            "Include a combination of cardiovascular, strength and flexibility exercises.",
-            "Eat a varied and balanced diet.",
-            "Stay hydrated and maintain a consistent sleep routine."
+            "Stay physically active regularly according to your abilities.",
+            "Include a variety of nutritious foods as part of a balanced eating pattern.",
+            "Stay hydrated throughout the day.",
+            "Maintain consistent sleep and healthy lifestyle habits."
         ];
     }
 
 
     // Other
-    else {
+    
+        // Other
+else {
 
-        if (otherText === "") {
+    if (otherText === "") {
 
-            document.getElementById("healthResult").innerHTML =
-                `<div class="alert alert-danger">
-                    Please enter your health concern.
-                </div>`;
+        document.getElementById("healthResult").innerHTML =
+            `<div class="alert alert-danger">
+                Please enter your health concern.
+            </div>`;
 
-            return;
-        }
+        return;
+    }
 
-        conditionName = otherText;
+    conditionName = otherText;
+
+    const concern = otherText.toLowerCase();
+
+
+    // Headache
+    if (
+        concern.includes("headache") ||
+        concern.includes("head ache")
+    ) {
 
         recommendations = [
-            "FitNest does not currently have specific guidance for this health concern.",
-            "Consult a qualified healthcare professional before making significant changes to your exercise or diet.",
-            "If you have been given an exercise, medication or dietary plan, follow the instructions provided by your healthcare professional."
+
+            "Drink enough fluids and avoid skipping regular meals.",
+            
+            "Rest and try relaxation techniques if stress may be contributing.",
+            
+            "Reduce prolonged screen or eye strain if it seems to make the headache worse.",
+            
+            "Keep a record of recurring headaches, including possible triggers and other symptoms."
         ];
+
     }
 
 
-    // Convert recommendation array into HTML list
+    // Unknown concern
+    else {
+
+        recommendations = [
+
+            "FitNest does not currently provide specific guidance for this health concern.",
+
+            "Avoid making significant changes to your exercise, diet or medication based only on general online information.",
+
+            "Consult a qualified healthcare professional for advice specific to your concern."
+
+        ];
+    }
+}
+
+
+    // Create recommendation list
     let recommendationList = "";
 
     recommendations.forEach(function(recommendation) {
@@ -128,6 +163,7 @@ function getHealthRecommendation() {
 
     // Display result
     document.getElementById("healthResult").innerHTML =
+
         `<div class="card border-success shadow-sm p-3">
 
             <h4 class="text-success mb-3">
@@ -151,9 +187,13 @@ function getHealthRecommendation() {
 
             <div class="alert alert-warning mb-0">
 
-                <strong>Important:</strong>
+                <strong>Important:</strong><br>
+
                 This information is for general educational purposes
                 and is not a diagnosis or personalized medical advice.
+                If you have a medical condition, consult a qualified
+                healthcare professional before making significant
+                changes to your exercise or diet.
 
             </div>
 
