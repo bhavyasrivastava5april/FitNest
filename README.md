@@ -161,6 +161,7 @@ Improved accessibility
 Integration with a backend
 AI-based personalized recommendations
 More advanced health and fitness analytics
+Doctor suggested foods
 ⚠️ Disclaimer
 
 FitNest provides general health, fitness and nutrition information for educational purposes only.
