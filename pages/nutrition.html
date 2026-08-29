@@ -99,138 +99,155 @@
 
 
     <!-- Nutrition Section -->
-    <section class="container py-5">
+    <!-- Nutrition Section -->
+<section class="container py-5">
 
-        <div class="row justify-content-center">
+    <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-8">
+        <!-- Nutrition Image -->
+        <div class="col-12 col-lg-6 text-center">
 
-                <div class="text-center mb-5">
+            <img src="../images/nutrition.png"
+                 class="img-fluid rounded page-image"
+                 alt="Nutrition Guide">
 
-                    <h1>Nutrition Guide</h1>
+        </div>
 
-                    <p class="text-muted">
-                        Choose your goal and preferences to get general
-                        food suggestions for your meal.
-                    </p>
+
+        <!-- Nutrition Form -->
+        <div class="col-12 col-lg-6">
+
+            <div class="card shadow p-4">
+
+                <h2 class="mb-4 text-center">
+                    Personalize Your Nutrition
+                </h2>
+
+
+                <!-- Goal -->
+                <div class="mb-3">
+
+                    <label for="goal" class="form-label">
+                        What is your goal?
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="goal">
+
+                        <option value="weightLoss">
+                            Weight Loss
+                        </option>
+
+                        <option value="weightGain">
+                            Weight Gain
+                        </option>
+
+                        <option value="muscleGain">
+                            Muscle Gain
+                        </option>
+
+                        <option value="generalFitness">
+                            General Fitness
+                        </option>
+
+                    </select>
 
                 </div>
 
 
-                <!-- Nutrition Form -->
-                <div class="card shadow p-4">
+                <!-- Diet Preference -->
+                <div class="mb-3">
 
-                    <h2 class="mb-4 text-center">
-                        Personalize Your Nutrition
-                    </h2>
+                    <label for="diet" class="form-label">
+                        Diet Preference
+                    </label>
 
+                    <select
+                        class="form-select"
+                        id="diet">
 
-                    <!-- Goal -->
-                    <div class="mb-4">
+                        <option value="vegetarian">
+                            Vegetarian
+                        </option>
 
-                        <label for="goal" class="form-label">
-                            What is your goal?
-                        </label>
+                        <option value="nonVegetarian">
+                            Non-Vegetarian
+                        </option>
 
-                        <select class="form-select" id="goal" required>
+                    </select>
 
-                            <option value="weightLoss">
-                                Weight Loss
-                            </option>
-
-                            <option value="weightGain">
-                                Weight Gain
-                            </option>
-
-                            <option value="muscleGain">
-                                Muscle Gain
-                            </option>
-
-                            <option value="generalFitness">
-                                General Fitness
-                            </option>
-
-                        </select>
-
-                    </div>
+                </div>
 
 
-                    <!-- Diet Preference -->
-                    <div class="mb-4">
+                <!-- Meal -->
+                <div class="mb-3">
 
-                        <label for="diet" class="form-label">
-                            Diet Preference
-                        </label>
+                    <label for="meal" class="form-label">
+                        Meal
+                    </label>
 
-                        <select class="form-select" id="diet" required>
+                    <select
+                        class="form-select"
+                        id="meal">
 
-                            <option value="vegetarian">
-                                Vegetarian
-                            </option>
+                        <option value="breakfast">
+                            Breakfast
+                        </option>
 
-                            <option value="nonVegetarian">
-                                Non-Vegetarian
-                            </option>
+                        <option value="lunch">
+                            Lunch
+                        </option>
 
-                        </select>
+                        <option value="dinner">
+                            Dinner
+                        </option>
 
-                    </div>
+                        <option value="snack">
+                            Snacks
+                        </option>
 
+                    </select>
 
-                    <!-- Meal -->
-                    <div class="mb-4">
-
-                        <label for="meal" class="form-label">
-                            Meal
-                        </label>
-
-                        <select class="form-select" id="meal" required  >
-
-                            <option value="breakfast">
-                                Breakfast
-                            </option>
-
-                            <option value="lunch">
-                                Lunch
-                            </option>
-
-                            <option value="dinner">
-                                Dinner
-                            </option>
-
-                            <option value="snacks">
-                                Snacks
-                            </option>
-
-                        </select>
-
-                    </div>
+                </div>
 
 
-                    <!-- Button -->
-                    <button
-                        class="btn btn-success w-100"
-                        onclick="getNutrition()">
+                <!-- Button -->
+                <button
+                    class="btn btn-success w-100"
+                    onclick="getNutrition()">
 
-                        Get Food Suggestions
+                    Get Food Suggestions
 
-                    </button>
+                </button>
 
 
-                    <!-- Recommendation -->
-                    <div id="nutritionResult" class="mt-4"></div>
+                <!-- Result -->
+                <div id="nutritionResult"
+                     class="mt-4">
 
                 </div>
 
             </div>
 
         </div>
-<div class="text-center mt-4">
-    <a href="../index.html" class="btn btn-outline-success">
-        ← Back to Home
-    </a>
-</div>
-    </section>
+
+    </div>
+
+
+    <!-- Back to Home -->
+    <div class="text-center mt-5">
+
+        <a href="../index.html"
+           class="btn btn-outline-success">
+
+            ← Back to Home
+
+        </a>
+
+    </div>
+
+</section>
 
 
     <!-- Bootstrap JS -->
